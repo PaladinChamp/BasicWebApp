@@ -14,11 +14,12 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "Fabi S";
         } else if (query.contains("plus")){ // TODO extend the programm here
-            String[] arr =  query.split(" ");
-            return String.valueOf(Integer.parseInt(arr[3]) + Integer.parseInt(arr[5]));
+            int a = Integer.parseInt(query.substring(query.indexOf("is")+3,query.indexOf("plus")-1));
+            int b = Integer.parseInt(query.substring(query.indexOf("plus")+5));
+            return String.valueOf(a + b);
         }
         else if (query.contains("largest")){
-            String[] arr = query.substring(query.indexOf("largest")+8).split(", ");
+            String[] arr = query.substring(query.indexOf("largest")+9).split(", ");
             int max = 0;
             for(int i = 0; i<arr.length;i++){
                 max = Math.max(max, Integer.parseInt(arr[i]));

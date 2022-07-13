@@ -30,4 +30,11 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void testPlus() {
+		String actual = queryProcessor.process("what is 15 plus 22");
+		if (!actual.contains("37")) {
+			fail("The QueryProcessor does not know about 15 plus 22.");
+		}
+	}
 }
