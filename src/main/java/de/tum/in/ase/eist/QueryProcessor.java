@@ -18,7 +18,7 @@ public class QueryProcessor {
             return String.valueOf(Integer.parseInt(arr[3]) + Integer.parseInt(arr[5]));
         }
         else if (query.contains("largest")){
-            String[] arr = query.substring(query.indexOf("largest")).split(", ");
+            String[] arr = query.substring(query.indexOf("largest")+8).split(", ");
             int max = 0;
             for(int i = 0; i<arr.length;i++){
                 max = Math.max(max, Integer.parseInt(arr[i]));
