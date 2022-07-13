@@ -15,7 +15,15 @@ public class QueryProcessor {
            return "Fabi S";
         } else if (query.contains("plus")){ // TODO extend the programm here
             String[] arr =  query.split(" ");
-            return String.valueOf(Integer.parseInt(arr[2]) + Integer.parseInt(arr[4]));
+            return String.valueOf(Integer.parseInt(arr[3]) + Integer.parseInt(arr[5]));
+        }
+        else if (query.contains("largest")){
+            String[] arr = query.substring(query.indexOf("largest")).split(", ");
+            int max = 0;
+            for(int i = 0; i<arr.length;i++){
+                max = Math.max(max, Integer.parseInt(arr[i]));
+            }
+            return String.valueOf(max);
         }
         else{
             return "";
